@@ -62,3 +62,76 @@ img {
   text-decoration: none;
   color: inherit;
 }
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.header-lg {
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 1.25rem;
+}
+
+.avatar {
+  border-radius: 3px;
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.link {
+  color: #d50000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card-list {
+  margin: 1.25rem 0;
+  font-size: 1.25rem;
+}
+
+.card-list li {
+  display: flex;
+  align-items: center;
+  margin: .625rem;
+}
+
+.card-list svg {
+  margin-right: .625rem;
+}
+
+.card-list a {
+  font-weight: 500;
+  color: inherit;
+}
+
+.bg-light {
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
+}
+
+.repo {
+  margin: .625rem 0;
+  padding: 0 1rem;
+  width: 250px;
+}
+
+.repo a {
+  text-decoration: none;
+}
+
+.repo img {
+  margin-bottom: .5rem;
+}
