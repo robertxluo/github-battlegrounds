@@ -62,6 +62,7 @@ class PlayerInput extends React.Component {
             placeholder="github username"
             value={this.state.username}
             onChange={this.handleChange}
+            data-lpignore="true"
           />
           <button className="btn btn-dark" type="submit" disabled={!this.state.username}>
             Submit
