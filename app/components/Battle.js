@@ -50,27 +50,24 @@ class PlayerInput extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1 className="center-text header-lg">Players</h1>
-        <form className="column player" onSubmit={this.handleSubmit}>
-          <label htmlFor="username" className="player-label">
-            {this.props.label}
-          </label>
-          <div className="row player-inputs">
-            <input
-              type="text"
-              id="username"
-              className="input-light"
-              placeholder="github username"
-              value={this.state.username}
-              onChange={this.handleChange}
-            />
-            <button className="btn btn-dark" type="submit" disable={!this.state.username}>
-              Submit
-            </button>
-          </div>
-        </form>
-      </div>
+      <form className="column player" onSubmit={this.handleSubmit}>
+        <label htmlFor="username" className="player-label">
+          {this.props.label}
+        </label>
+        <div className="player-inputs">
+          <input
+            type="text"
+            id="username"
+            className="input-light"
+            placeholder="github username"
+            value={this.state.username}
+            onChange={this.handleChange}
+          />
+          <button className="btn btn-dark" type="submit" disabled={!this.state.username}>
+            Submit
+          </button>
+        </div>
+      </form>
     );
   }
 }
@@ -81,11 +78,52 @@ PlayerInput.propTypes = {
 };
 
 export default class Battle extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      playerOne: null,
+      playerTwo: null
+    };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(id, player) {
+    this.setState({
+      [id]: player
+    });
+  }
+
   render() {
+    const { playerOne, playerTwo } = this.state;
+
     return (
       <React.Fragment>
         <Instructions />
-        <PlayerInput label="Player One:" onSubmit={value => console.log(value)} />
+        <h1 className="center-text header-lg">Players</h1>
+        <div className="row players-container">
+          <div className="row space-around">
+            {playerOne === null && (
+              <PlayerInput
+                label="Player One"
+                onSubmit={player => {
+                  this.handleSubmit('playerOne', player);
+                }}
+              />
+            )}
+          </div>
+          <div className="row space-around">
+            {playerTwo === null && (
+              <PlayerInput
+                label="Player Two"
+                onSubmit={player => {
+                  this.handleSubmit('playerTwo', player);
+                }}
+              />
+            )}
+          </div>
+        </div>
       </React.Fragment>
     );
   }
