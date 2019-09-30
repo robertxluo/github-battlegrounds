@@ -41,6 +41,8 @@ img {
   margin: 0 auto;
 }
 
+
+
 .flex-center {
   display: flex;
   justify-content: center;
@@ -78,6 +80,7 @@ img {
   font-weight: 300;
   margin: 1.25rem;
 }
+
 
 .avatar {
   border-radius: 3px;
@@ -134,4 +137,38 @@ img {
 
 .repo img {
   margin-bottom: .5rem;
+}
+
+/* Battle Styles */
+
+.instructions-container {
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 0;
+  max-width: 1200px;
+}
+
+.container-sm {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header-sm {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin: 1rem;
+}
+
+
+.battle-instructions {
+  padding: 0;
+}
+
+.battle-instructions li h3 {
+  font-size: 1.5rem;
+}
+
+.battle-instructions svg {
+  padding: 2rem;
+  border-radius: 3px;
 }
