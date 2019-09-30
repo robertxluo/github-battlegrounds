@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FaUserFriends, FaFighterJet, FaTrophy, FaTimesCircle } from 'react-icons/fa';
 
+import Results from './Results';
+
 function Instructions() {
   return (
     <div className="instructions-container">
@@ -64,7 +66,7 @@ class PlayerInput extends React.Component {
             onChange={this.handleChange}
             data-lpignore="true"
           />
-          <button className="btn btn-dark" type="submit" disabled={!this.state.username}>
+          <button className="btn btn-dark " type="submit" disabled={!this.state.username}>
             Submit
           </button>
         </div>
@@ -113,7 +115,8 @@ export default class Battle extends React.Component {
 
     this.state = {
       playerOne: null,
-      playerTwo: null
+      playerTwo: null,
+      battle: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -133,45 +136,63 @@ export default class Battle extends React.Component {
   }
 
   render() {
-    const { playerOne, playerTwo } = this.state;
+    const { playerOne, playerTwo, battle } = this.state;
+
+    if (battle === true) {
+      return <Results playerOne={playerOne} playerTwo={playerTwo} />;
+    }
 
     return (
       <React.Fragment>
         <Instructions />
         <h1 className="center-text header-lg">Players</h1>
-        <div className="row players-container">
-          <div className="row space-around">
-            {playerOne === null ? (
-              <PlayerInput
-                label="Player One"
-                onSubmit={player => {
-                  this.handleSubmit('playerOne', player);
-                }}
-              />
-            ) : (
-              <PlayerPreview
-                username={playerOne}
-                label="Player One"
-                onReset={() => this.handleReset('playerOne')}
-              />
-            )}
+        <div className="column">
+          <div className="row players-container">
+            <div className="row space-around">
+              {playerOne === null ? (
+                <PlayerInput
+                  label="Player One"
+                  onSubmit={player => {
+                    this.handleSubmit('playerOne', player);
+                  }}
+                />
+              ) : (
+                <PlayerPreview
+                  username={playerOne}
+                  label="Player One"
+                  onReset={() => this.handleReset('playerOne')}
+                />
+              )}
+            </div>
+            <div className="row space-around">
+              {playerTwo === null ? (
+                <PlayerInput
+                  label="Player Two"
+                  onSubmit={player => {
+                    this.handleSubmit('playerTwo', player);
+                  }}
+                />
+              ) : (
+                <PlayerPreview
+                  username={playerTwo}
+                  label="Player Two"
+                  onReset={() => this.handleReset('playerTwo')}
+                />
+              )}
+            </div>
           </div>
-          <div className="row space-around">
-            {playerTwo === null ? (
-              <PlayerInput
-                label="Player Two"
-                onSubmit={player => {
-                  this.handleSubmit('playerTwo', player);
-                }}
-              />
-            ) : (
-              <PlayerPreview
-                username={playerTwo}
-                label="Player Two"
-                onReset={() => this.handleReset('playerTwo')}
-              />
-            )}
-          </div>
+          {playerOne && playerTwo && (
+            <button
+              className="battle-button btn btn-dark"
+              onClick={() => {
+                this.setState({
+                  battle: true
+                });
+              }}
+            >
+              Battle
+            </button>
+          )}
         </div>
       </React.Fragment>
     );
