@@ -243,3 +243,18 @@ img {
   display: flex;
   justify-content: space-evenly;
 }
+
+.avatar-small {
+  width: 55px;
+  height: 55px;
+  border-radius: 70595px;
+}
+
+.player-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: .5rem;
+  min-width: 500px;
+}
