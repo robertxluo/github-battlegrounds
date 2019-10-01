@@ -125,17 +125,17 @@ img {
   border-radius: 3px;
 }
 
-.repo {
+.card {
   margin: .625rem 0;
   padding: 0 1rem;
   width: 250px;
 }
 
-.repo a {
+.card a {
   text-decoration: none;
 }
 
-.repo img {
+.card img {
   margin-bottom: .5rem;
 }
 
@@ -167,7 +167,8 @@ img {
 }
 
 .battle-instructions li h3 {
-  font-size: 1.5rem;}
+  font-size: 1.5rem;
+}
 
 .battle-instructions svg {
   padding: 2rem;
@@ -273,4 +274,10 @@ img {
   .player-info {
     min-width: 300px;
   }
+}
+
+.error {
+  color: #ff1616;
+  font-size: 1.5rem;
+  margin: 4rem 0;
 }
