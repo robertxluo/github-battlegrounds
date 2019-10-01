@@ -1,5 +1,5 @@
 {
-  "name": "github-battle",
+  "name": "github-battlegrounds",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,15 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/robertxluo/github-battle.git"
+    "url": "git+https://github.com/robertxluo/github-battlegrounds.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/robertxluo/github-battle/issues"
+    "url": "https://github.com/robertxluo/github-battlegrounds/issues"
   },
-  "homepage": "https://github.com/robertxluo/github-battle#readme",
+  "homepage": "https://github.com/robertxluo/github-battlegrounds#readme",
   "dependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
