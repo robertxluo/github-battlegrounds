@@ -259,10 +259,10 @@ img {
   min-width: 500px;
 }
 
-.battle-button {
+.btn-space {
   align-self: center;
   margin: 1rem 0;
-  min-width: 300px;
+  min-width: 250px;
 }
 
 @media screen and (max-width: 1200px) {
