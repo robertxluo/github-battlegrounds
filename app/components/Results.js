@@ -36,7 +36,9 @@ function ProfileList({ profile }) {
   );
 }
 
-ProfileList.propTypes;
+ProfileList.propTypes = {
+  profile: PropTypes.object.isRequired
+};
 
 export default class Results extends React.Component {
   constructor(props) {
