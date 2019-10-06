@@ -5,6 +5,7 @@ import { FaUser, FaStar, FaCodeBranch, FaExclamationTriangle } from 'react-icons
 
 import Card from './Card';
 import Loading from './Loading';
+import Tooltip from './Tooltip';
 
 function LanguagesNav({ selected, onUpdateLanguage }) {
   const languages = ['All', 'JavaScript', 'Python', 'Java', 'Ruby', 'CSS'];
@@ -40,11 +41,13 @@ function ReposGrid({ repos }) {
 
         return (
           <li key={html_url}>
-            <Card header={`#${index + 1}`} avatar={avatar_url} href={html_url} name={login}>
+            <Card header={`#${index + 1}`} avatar={avatar_url} href={html_url} name={name}>
               <ul className="card-list">
                 <li>
-                  <FaUser color="rgb(255,191,116)" size={22} />
-                  <a href={`https://github.com/${login}`}>{login}</a>
+                  <Tooltip text="GitHub username">
+                    <FaUser color="rgb(255,191,116)" size={22} />
+                    <a href={`https://github.com/${login}`}>{login}</a>
+                  </Tooltip>
                 </li>
                 <li>
                   <FaStar color="rgb(255,215,0)" size={22} />
