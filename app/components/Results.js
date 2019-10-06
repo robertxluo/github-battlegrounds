@@ -2,10 +2,10 @@ import React from 'react';
 import { battle } from '../utils/api';
 import { FaCompass, FaBriefcase, FaUsers, FaUserFriends, FaCode, FaUser } from 'react-icons/fa';
 import PropTypes from 'prop-types';
-import Loading from './Loading';
-import Tooltip from './Tooltip';
 
+import Loading from './Loading';
 import Card from './Card';
+import Tooltip from './Tooltip';
 
 function ProfileList({ profile }) {
   return (
