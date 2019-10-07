@@ -44,7 +44,7 @@ img {
 .dark {
   color: #dadada;
   background: #1c2022;
-  min-height: 100%;
+  min-height: 100vh;
 }
 
 
@@ -131,6 +131,11 @@ img {
   border-radius: 3px;
 }
 
+.bg-dark {
+  background: rgb(36, 40, 42);
+  border-radius: 3px;
+}
+
 .card {
   margin: .625rem 0;
   padding: 0 1rem;
@@ -214,7 +219,12 @@ img {
 }
 
 .player-inputs .input-light {
-  background: rgba(0, 0, 0, 0.02);
+  background: #fafafa;
+}
+
+.player-inputs .input-dark {
+  color: #dadada;
+  background: #4a4a4a;
 }
 
 .player-inputs button {
@@ -240,7 +250,19 @@ img {
   background: #141414;
 }
 
+
 .btn-dark:disabled {
+  color: #4a4a4a;
+  background: #292929;
+
+}
+
+.btn-light {
+  color: #000;
+  background: #aaa8a8;
+}
+
+.btn-light:disabled {
   color: #c7c7c7;
   background: #f2f2f2;
 }
