@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FaUserFriends, FaFighterJet, FaTrophy, FaTimesCircle } from 'react-icons/fa';
 import { ThemeConsumer } from '../contexts/theme';
-
-import Results from './Results';
+import { Link } from 'react-router-dom';
 
 function Instructions() {
   return (
@@ -97,11 +96,7 @@ function PlayerPreview({ username, onReset, label }) {
           <h3 className="player-label">{label}</h3>
           <div className={`row bg-${theme}`}>
             <div className="player-info">
-              <img
-                className="avatar-small"
-                src={`https://github.com/${username}.png?size=200`}
-                alt={`Avatar for ${username}`}
-              />
+              <img className="avatar-small" src={`https://github.com/${username}.png?size=200`} alt={`Avatar for ${username}`} />
               <a href={`https://github.com/${username}`} className="link">
                 {username}
               </a>
@@ -128,8 +123,7 @@ export default class Battle extends React.Component {
 
     this.state = {
       playerOne: null,
-      playerTwo: null,
-      battle: false
+      playerTwo: null
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -149,23 +143,7 @@ export default class Battle extends React.Component {
   }
 
   render() {
-    const { playerOne, playerTwo, battle } = this.state;
-
-    if (battle === true) {
-      return (
-        <Results
-          playerOne={playerOne}
-          playerTwo={playerTwo}
-          onReset={() =>
-            this.setState({
-              playerOne: null,
-              playerTwo: null,
-              battle: false
-            })
-          }
-        />
-      );
-    }
+    const { playerOne, playerTwo } = this.state;
 
     return (
       <React.Fragment>
@@ -182,11 +160,7 @@ export default class Battle extends React.Component {
                   }}
                 />
               ) : (
-                <PlayerPreview
-                  username={playerOne}
-                  label="Player One"
-                  onReset={() => this.handleReset('playerOne')}
-                />
+                <PlayerPreview username={playerOne} label="Player One" onReset={() => this.handleReset('playerOne')} />
               )}
             </div>
             <div className="row space-around">
@@ -198,25 +172,20 @@ export default class Battle extends React.Component {
                   }}
                 />
               ) : (
-                <PlayerPreview
-                  username={playerTwo}
-                  label="Player Two"
-                  onReset={() => this.handleReset('playerTwo')}
-                />
+                <PlayerPreview username={playerTwo} label="Player Two" onReset={() => this.handleReset('playerTwo')} />
               )}
             </div>
           </div>
           {playerOne && playerTwo && (
-            <button
+            <Link
               className="btn btn-dark btn-space"
-              onClick={() => {
-                this.setState({
-                  battle: true
-                });
+              to={{
+                pathname: '/battle/results',
+                search: `?playerOne=${playerOne}&playerTwo=${playerTwo}`
               }}
             >
               Battle
-            </button>
+            </Link>
           )}
         </div>
       </React.Fragment>
