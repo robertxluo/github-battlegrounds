@@ -2,6 +2,7 @@ html,
 #app {
   box-sizing: border-box;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 *,
@@ -37,7 +38,7 @@ img {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 3rem;
 }
@@ -47,7 +48,6 @@ img {
   background: #1c2022;
   min-height: 100vh;
 }
-
 
 
 .flex-center {
@@ -61,15 +61,19 @@ img {
   background: transparent;
 }
 
-.navbar {
-  padding-top: 5rem;
-}
-
 .nav-link {
   font-size: 1rem;
   font-weight: bold;
   text-decoration: none;
   color: inherit;
+}
+
+.nav-link:hover {
+  cursor: pointer;
+}
+
+.navbar {
+  display: flex;
 }
 
 .navbar li {
@@ -91,9 +95,8 @@ img {
 }
 
 .header-lg {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 300;
-  margin: 1.25rem;
 }
 
 
@@ -146,8 +149,9 @@ img {
 }
 
 .card {
-  margin: .625rem 0;
-  padding: 0 1rem;
+  margin: 1rem 1rem;
+  min-height: 450px;
+  padding: 1rem 2rem;
   width: 250px;
 }
 
@@ -166,8 +170,7 @@ img {
 .instructions-container {
   display: flex;
   flex-direction: column;
-  margin: 5rem 0;
-  max-width: 1200px;
+  max-width: 1500px;
 }
 
 .container-sm {
@@ -176,7 +179,7 @@ img {
 }
 
 .header-sm {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 300;
   margin: 1rem;
 }
@@ -186,7 +189,7 @@ img {
   padding: 0;
 }
 
-.battle-instructions li h3 {
+.battle-instructions li {
   font-size: 1.5rem;
 }
 
@@ -243,7 +246,7 @@ img {
 
 .btn {
   padding: .625rem;
-  text-decoration: uppercase;
+  text-decoration: none;
   letter-spacing: .125rem;
   border-radius: 3px;
   border: none;
@@ -252,6 +255,7 @@ img {
   align-items: center;
   cursor: pointer;
   max-width: 200px;
+  text-align: center;
 }
 
 .btn-dark {
@@ -267,8 +271,9 @@ img {
 }
 
 .btn-light {
-  color: #000;
-  background: #aaa8a8;
+  color: #fff;
+  background: #141414;
+  ;
 }
 
 .btn-light:disabled {
@@ -302,7 +307,13 @@ img {
   min-width: 250px;
 }
 
-@media screen and (max-width: 1200px) {
+.error {
+  color: #ff1616;
+  font-size: 1.5rem;
+  margin: 4rem 0;
+}
+
+@media screen and (max-width: 1500px) {
   .players-container {
     flex-direction: column;
     align-items: center;
@@ -313,8 +324,22 @@ img {
   }
 }
 
-.error {
-  color: #ff1616;
-  font-size: 1.5rem;
-  margin: 4rem 0;
+@media screen and (max-width: 532px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar li {
+    padding: 0.5rem 0;
+  }
+
+  .btn {
+    margin-left: 0;
+    min-width: 300px;
+  }
+
+  .player-inputs button {
+    margin-left: 0;
+  }
 }

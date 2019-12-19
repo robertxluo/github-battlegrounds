@@ -23,7 +23,7 @@ export default function Nav() {
               </NavLink>
             </li>
           </ul>
-          <button style={{ fontSize: 30, height: 50 }} className="btn-clear" onClick={toggleTheme}>
+          <button style={{ fontSize: 30 }} className="nav-link btn-clear" onClick={toggleTheme}>
             {theme === 'light' ? '🌙' : '☀️'}
           </button>
         </nav>

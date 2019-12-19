@@ -13,15 +13,15 @@ function Instructions() {
           <ol className="container-sm grid center-text battle-instructions">
             <li>
               <h3 className="header-sm">Enter two GitHub users</h3>
-              <FaUserFriends className={`bg-${theme}`} color="rgb(255,191,116)" size={256} />
+              <FaUserFriends className={`bg-${theme}`} color="rgb(255,191,116)" size={200} />
             </li>
             <li>
               <h3 className="header-sm">Battle</h3>
-              <FaFighterJet className={`bg-${theme}`} color="#727272" size={256} />
+              <FaFighterJet className={`bg-${theme}`} color="#727272" size={200} />
             </li>
             <li>
               <h3 className="header-sm">See the winner</h3>
-              <FaTrophy className={`bg-${theme}`} color="rgb(255,215,0)" size={256} />
+              <FaTrophy className={`bg-${theme}`} color="rgb(255,215,0)" size={200} />
             </li>
           </ol>
         </div>
@@ -52,7 +52,10 @@ class PlayerInput extends React.Component {
       <ThemeConsumer>
         {({ theme }) => (
           <form className="column player" onSubmit={this.handleSubmit}>
-            <label htmlFor={`${this.props.label.toLowerCase()} username`.split(' ').join('-')} className="player-label">
+            <label
+              htmlFor={`${this.props.label.toLowerCase()} username`.split(' ').join('-')}
+              className="player-label"
+            >
               {this.props.label}
             </label>
             <div className="player-inputs">
@@ -89,7 +92,11 @@ function PlayerPreview({ username, onReset, label }) {
           <h3 className="player-label">{label}</h3>
           <div className={`row bg-${theme}`}>
             <div className="player-info">
-              <img className="avatar-small" src={`https://github.com/${username}.png?size=200`} alt={`Avatar for ${username}`} />
+              <img
+                className="avatar-small"
+                src={`https://github.com/${username}.png?size=200`}
+                alt={`Avatar for ${username}`}
+              />
               <a href={`https://github.com/${username}`} className="link">
                 {username}
               </a>
@@ -134,7 +141,9 @@ export default class Battle extends React.Component {
     return (
       <React.Fragment>
         <Instructions />
-        <h1 className="center-text header-lg">Players</h1>
+        <h1 style={{ paddingTop: '5rem' }} className="center-text header-lg">
+          Players
+        </h1>
         <div className="column">
           <div className="row players-container">
             <div className="row space-around">
@@ -146,7 +155,11 @@ export default class Battle extends React.Component {
                   }}
                 />
               ) : (
-                <PlayerPreview username={playerOne} label="Player One" onReset={() => this.handleReset('playerOne')} />
+                <PlayerPreview
+                  username={playerOne}
+                  label="Player One"
+                  onReset={() => this.handleReset('playerOne')}
+                />
               )}
             </div>
             <div className="row space-around">
@@ -158,7 +171,11 @@ export default class Battle extends React.Component {
                   }}
                 />
               ) : (
-                <PlayerPreview username={playerTwo} label="Player Two" onReset={() => this.handleReset('playerTwo')} />
+                <PlayerPreview
+                  username={playerTwo}
+                  label="Player Two"
+                  onReset={() => this.handleReset('playerTwo')}
+                />
               )}
             </div>
           </div>
