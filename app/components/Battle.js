@@ -52,13 +52,13 @@ class PlayerInput extends React.Component {
       <ThemeConsumer>
         {({ theme }) => (
           <form className="column player" onSubmit={this.handleSubmit}>
-            <label htmlFor="username" className="player-label">
+            <label htmlFor={`${this.props.label.toLowerCase()} username`.split(' ').join('-')} className="player-label">
               {this.props.label}
             </label>
             <div className="player-inputs">
               <input
                 type="text"
-                id="username"
+                id={`${this.props.label.toLowerCase()} username`.split(' ').join('-')}
                 className={`input-${theme}`}
                 placeholder="github username"
                 value={this.state.username}
