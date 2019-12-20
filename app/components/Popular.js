@@ -8,7 +8,21 @@ import Loading from './Loading';
 import Tooltip from './Tooltip';
 
 function LanguagesNav({ selected, onUpdateLanguage }) {
-  const languages = ['All', 'JavaScript', 'Python', 'Java', 'Ruby', 'CSS'];
+  const languages = [
+    'All',
+    'JavaScript',
+    'Python',
+    'Java',
+    'Ruby',
+    'CSS',
+    'Go',
+    'Swift',
+    'TypeScript',
+    'Rust',
+    'Kotlin',
+    'PHP',
+    'C'
+  ];
 
   return (
     <ul className="navbar flex-center">
@@ -19,7 +33,7 @@ function LanguagesNav({ selected, onUpdateLanguage }) {
             style={language === selected ? { color: '#d50000' } : null}
             onClick={() => onUpdateLanguage(language)}
           >
-            {language}
+            {language === 'C' ? `${language}/C++` : `${language}`}
           </button>
         </li>
       ))}
