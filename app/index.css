@@ -324,6 +324,22 @@ img {
   }
 }
 
+@media screen and (max-width: 1000px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar li {
+    padding: 0.5rem 0;
+  }
+
+  .btn {
+    margin-left: 0;
+    min-width: 300px;
+  }
+}
+
 @media screen and (max-width: 532px) {
   .navbar {
     display: flex;
